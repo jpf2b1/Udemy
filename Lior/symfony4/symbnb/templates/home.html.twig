@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon application</title>
+</head>
+<body>
+    <h1>{{name | upper}}</h1>
+    <p>Comment allez-vous !?</p>
+    {% if age >= 18 %}
+        <p>Vous etes un adulte</p>
+    {% else %}
+        <p>Vous etes mineur</p>
+    {% endif %}
+
+    <ul>
+    {% for prenom, ages in tableau %}
+        <li>index : {{loop.index0}} ===>  {{prenom}} : {{ages}} ans</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{{ path('hello',{'prenom':'lior', 'age':25}) }}">Page Hello</a>
+
+</body>
+</html>
